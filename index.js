@@ -12,12 +12,13 @@ const http = require('http');
 const Admin = require('./adminModel');
 const crypto = require('crypto');
 const { sendEmail, generateRandomCode } = require('./emailService');
-const { appendFileSync } = require('fs');
+
 const server = http.createServer(app);
 const io = socketIo(server);
 
 
-mongoose.connect('mongodb://localhost:27017/rotary_event', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://Nero:Nero2636@atlascluster.dn1h6uq.mongodb.net/rotary_event', { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 mongoose.connection.on('connected', function () {
     console.log('Database connection has been established');
