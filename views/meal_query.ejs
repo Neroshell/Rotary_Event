@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+   
+    <title>User list</title>
+    <style>
+        /* Add custom CSS for vertical scroll */
+        .table-container {
+            max-height: 400px; /* Adjust height as needed */
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <img src="/images/logo.png" alt="">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Admin
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/Admin_signup">Sign up</a></li>
+              <li><a class="dropdown-item" href="/logout">Logout</a></li>
+            </ul>
+          
+          </div>
+          <div class="dropdown-2">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Admin
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/Admin_signup">Dashboard</a></li>
+              <li><a class="dropdown-item" href="/Admin_login">Register meal</a></li>
+              <li><a class="dropdown-item" href="/Admin_login">View list</a></li>
+              <li><a class="dropdown-item" href="/logout">Sign out</a></li>
+              
+            </ul>
+            
+          </div>
+    </nav>
+    <div class="container-fluid" >
+        <div class="row">
+          <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block  sidebar">
+            <div class="sidebar-sticky">
+              <a href="/admin-dashboard" class="navbar-brand text-white">Admin Dashboard</a>
+              <a href="/admin-dashboard/register_meal">Register meal</a>
+              <a href="/admin-dashboard/list">View List</a>
+              <a href="/admin-dashboard/meal_list">Meal List</a>
+              <!-- Add more links as needed -->
+            </div>
+          </nav>
+    
+          <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4" id="content">
+            <h2>Search results</h2>
+
+            <!-- Search input and button -->
+            <div class="row mb-4" style="margin-top: 55px;">
+              
+                  <div class="col-md-2">
+                     Search results
+                  </div>
+              </form>
+          </div>
+          
+
+            <!-- Table container with vertical scroll -->
+            <div class="table-container">
+                <div class="table-responsive">
+                    <table class="table table-striped table_auto">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Unique Code</th>
+                                <th>Ate at</th>
+                                <th>Ate on</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Loop through meal tickets and display the data -->
+                            <% meals.forEach((meal, index) => { %>
+                                <tr>
+                                    <td><%= index + 1 %></td>
+                                    <td><%= meal.firstname %></td>
+                                    <td><%= meal.lastname %></td>
+                                    <td><%= meal.uniqueCode %></td>
+                                    <td style="color: green;"><%= meal.ateAt %></td>
+                                    <td style="color: green;"><%= meal.ateOn %></td>
+                                    
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            
+           
+
+          </main>
+        </div>
+      </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+         
+          
+  
+     
+</body>
+</html>

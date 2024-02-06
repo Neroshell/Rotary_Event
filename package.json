@@ -1,0 +1,22 @@
+{
+  "name": "rotary-event",
+  "version": "1.0.0",
+  "description": "Rotary Event App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Udezi Nero",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.18.0",
+    "mongoose": "^8.1.1",
+    "nodemailer": "^6.9.8",
+    "passport": "^0.7.0",
+    "passport-local-mongoose": "^8.0.0",
+    "socket.io": "^4.7.4"
+  }
+}

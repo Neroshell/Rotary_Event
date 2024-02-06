@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+nav{
+    display: flex;
+    justify-content: space-around;
+}
+.dropdown {
+  margin-top: 20px;
+}
+.dropdown-2 {
+  display: none;
+}
+
+.dropdown button{
+  background-color: #17478F;
+   border: none;
+}
+
+.dropdown button:hover{
+  background-color: #F7A81B;
+}
+
+nav img{
+    width: 13%;
+    margin-left: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.root-body{
+    height: 100vh;
+    
+}
+
+body main{
+
+   
+    text-align: center;
+    margin-top: 50px;
+}
+
+.bn53 {
+    background-color: #17478F;
+    color: white;
+    padding: 15px 30px 15px 30px;
+    animation: bn53bounce 4s infinite;
+    cursor: pointer;
+    border: none;
+     border-radius: 10px;
+     margin-top: 50px;
+  }
+
+  .form-box{
+    width: 40%;
+    margin: 60px auto;
+  }
+
+  /* Admin */
+  #sidebar {
+    background-color: #17478F; /* Sidebar background color */
+    padding-top: 20px;
+    min-height: 100vh;
+  }
+  #content {
+    padding: 20px;
+  }
+  #sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+  }
+  #sidebar a:hover {
+    color: #F7A81B; /* Sidebar link hover color */
+  }
+.admin-dropdown{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.table_auto{
+
+overflow-x: scroll;
+}
+  
+@keyframes bn53bounce {
+    5%,
+    50% {
+      transform: scale(1);
+    }
+  
+    10% {
+      transform: scale(1);
+    }
+  
+    15% {
+      transform: scale(1);
+    }
+  
+    20% {
+      transform: scale(1) rotate(-5deg);
+    }
+  
+    25% {
+      transform: scale(1) rotate(5deg);
+    }
+  
+    30% {
+      transform: scale(1) rotate(-3deg);
+    }
+  
+    35% {
+      transform: scale(1) rotate(2deg);
+    }
+  
+    40% {
+      transform: scale(1) rotate(0);
+    }
+  }
+
+
+  @media (max-width: 437px) {
+    #content {
+      margin-top: 40px; /* Adjust the margin for smaller screens */
+      /* You can also reposition the element, hide it, or apply other styles as needed */
+    }
+    body main{
+      margin-top: 200px;
+      width: 50%;
+      border-radius: 20px;
+     
+    }
+    nav img{
+      width: 30%;
+    }
+
+    .dropdown {
+      display: none;
+    }
+
+    .dropdown_main{
+      display: block;
+    }
+    .dropdown-2 {
+      display: block;
+      color: white;
+      margin-top: 20px ;
+    }
+    #sidebar {
+      display: none;
+    }
+
+    
+  }
