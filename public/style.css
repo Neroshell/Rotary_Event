@@ -26,6 +26,10 @@ nav{
   display: none;
 }
 
+.index-main{
+  text-align: left;
+  padding-top: 10px ;
+}
 .dropdown button{
   background-color: #17478F;
    border: none;
@@ -79,9 +83,7 @@ padding-bottom: 5px;
   line-height: 1.2;
  }
 
-.index-main{
-  padding-top: 50px ;
-}
+
 
 
 .bn53 {
@@ -185,7 +187,10 @@ overflow-x: scroll;
     .dropdown {
       display: none;
     }
-
+    .index-main{
+      text-align: center;
+      padding-top: 10px ;
+    }
    
 
     .hero h1{
