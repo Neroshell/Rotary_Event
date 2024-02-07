@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
    
     <title>Welcome</title>
 </head>
-<body>
+<body class="root-body">
     <nav>
         <img src="/images/logo.png" alt="">
         <div class="dropdown dropdown_main">
@@ -22,11 +25,30 @@
           </div>
     </nav>
 
-    <main class="container">
-        <h1>Register for the event</h1>
-        <p>Get your Unique code now</p>
+    <main class="container index-main" >
+        <h1><span style="color: #F7A81B;">District team</span> training seminar 2024</h1>
+        <p>Orchid Hotel, Lekki express way, Ikota, Lagos </p>
+        <div class="countdown">
+            <div>
+                <p id="day">00</p>
+                <span>Days</span>
+            </div>
+            <div>
+                <p id="hour">00</p>
+                <span>Hours</span>
+            </div>
+            <div>
+                <p id="minuite">00</p>
+                <span>Minuites</span>
+            </div>
+            <div>
+                <p id="seconds">00</p>
+                <span>Seconds</span>
+            </div>
+        </div>
+        
 
-        <button class="bn53" data-bs-toggle="modal" data-bs-target="#registrationModal">Sign up</button>
+        <button class="bn53" data-bs-toggle="modal" data-bs-target="#registrationModal">Register</button>
         <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
             <div class="modal-dialog d-flex align-items-center justify-content-center">
                 <div class="modal-content">
@@ -62,6 +84,42 @@
     </main>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+var countDownDate = new Date("March 02, 2024 00:00:00").getTime();
+var x = setInterval(function(){
+
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+
+    console.log("Distance:", distance); // Check distance value in console
+
+    if (distance < 0) {
+        clearInterval(x); // Stop the countdown if the countdown date has passed
+        document.getElementById("day").innerHTML = "0";
+        document.getElementById("hour").innerHTML = "00";
+        document.getElementById("minuite").innerHTML = "00";
+        document.getElementById("seconds").innerHTML = "00";
+        return;
+    }
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000); 
+
+    console.log("Days:", days, "Hours:", hours, "Minutes:", minutes, "Seconds:", seconds); // Check countdown values in console
+
+    document.getElementById("day").innerHTML = days;
+    document.getElementById("hour").innerHTML = hours;
+    document.getElementById("minuite").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+}, 1000);
+
+
+
+</script>
   
   
 
