@@ -2,9 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
-
+body main{
+  margin-top: 80px;
+  width: 50%;
+  border-radius: 20px;
+  text-align: center;
+ 
+}
 
 nav{
     display: flex;
@@ -41,6 +48,10 @@ nav img{
 
 }
 
+p{
+  color: #1C1C1C;
+}
+
 .countdown{
   display: flex;
   gap: 10px;
@@ -53,7 +64,7 @@ nav img{
  text-align: center;
 border-radius: 10px;
 background-color: #17478F;
-color: white;
+ color: #1C1C1C;
 padding-bottom: 5px;
 
  
@@ -74,8 +85,8 @@ padding-bottom: 5px;
 
 
 .bn53 {
-    background-color: #17478F;
-    color: white;
+    background-color: #F7A81B;
+    color: #17478F;
     padding: 15px 30px 15px 30px;
     animation: bn53bounce 4s infinite;
     cursor: pointer;
@@ -161,9 +172,10 @@ overflow-x: scroll;
       /* You can also reposition the element, hide it, or apply other styles as needed */
     }
     body main{
-      margin-top: 200px;
+      margin-top: 80px;
       width: 50%;
       border-radius: 20px;
+      text-align: center;
      
     }
     nav img{
@@ -172,6 +184,12 @@ overflow-x: scroll;
 
     .dropdown {
       display: none;
+    }
+
+   
+
+    .hero h1{
+      font-size: 42px;
     }
 
     .dropdown_main{
