@@ -10,6 +10,10 @@ const mealTicketSchema = mongoose.Schema({
     firstname: String,
     lastname: String,
     uniqueCode: String,
+    mealCount: {
+      type: Number,
+      default: 0, 
+  },
     ateAt: {
         type: String,
         required: true,

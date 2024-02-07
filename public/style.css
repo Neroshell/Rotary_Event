@@ -29,6 +29,8 @@ nav{
 .index-main{
   text-align: left;
   padding-top: 10px ;
+
+  margin-top: 50px;
 }
 .dropdown button{
   background-color: #17478F;
@@ -101,6 +103,30 @@ padding-bottom: 5px;
     width: 40%;
     margin: 60px auto;
   }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 0;
+    color: #1C1C1C;
+}
+
+footer p a{
+  text-decoration: none;
+ 
+}
+footer p{
+
+  margin: 10px auto;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+}
+
+
 
   /* Admin */
   #sidebar {
@@ -190,6 +216,7 @@ overflow-x: scroll;
     .index-main{
       text-align: center;
       padding-top: 10px ;
+     
     }
    
 

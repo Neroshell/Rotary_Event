@@ -174,12 +174,14 @@ app.get('/admin-dashboard', async function(req, res) {
     try {
         // Fetch any user document to get the count value
         const userDocument = await User.findOne();
+         const mealNumber = await mealTicket.findOne();
 
         // Extract the count value from the user document or default to 0
         const count = userDocument ? userDocument.count : 0;
+        const foodCount = mealNumber ? mealNumber.mealCount : 0;
 
         if (req.isAuthenticated()) {
-            res.render('admin_dashboard', { count: count });
+            res.render('admin_dashboard', { count: count, foodCount: foodCount });
         } else {
             res.redirect('/admin_login');
         }
@@ -237,6 +239,8 @@ app.post('/admin-dashboard/register_meal', async function(req, res) {
         const savedMealTicket = await meal.save();
 
         if (savedMealTicket) {
+            
+            await mealTicket.updateOne({}, { $inc: { mealCount: 1 } });
             res.redirect('/admin-dashboard/meal_list');
            
           
