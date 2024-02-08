@@ -64,19 +64,19 @@ app.post('/', async function(req, res) {
         const { firstname, lastname, email } = req.body;
 
         // Generate a random alphanumeric code with exactly 5 characters
-        const eventCode = generateRandomCode(5);
+        const generatedCode = generateRandomCode(5);
 
         const newUser = new User({
             firstname,
             lastname,
             email,
-            eventCode, // Save the code to the uniqueCode field
+            eventCode: generatedCode // Save the code to the uniqueCode field
         });
 
         const savedUser = await newUser.save();
         if (savedUser) {
             // Send the code to the user's email using the separate function
-            sendEmail(email);
+            sendEmail(email, generatedCode);
 
             await User.updateOne({}, { $inc: { count: 1 } });
 

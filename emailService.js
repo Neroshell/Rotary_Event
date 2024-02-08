@@ -6,8 +6,8 @@ function generateRandomCode(length) {
     return buffer.toString('hex').slice(0, length);
 }
 
-function sendEmail(userEmail) {
-    const uniqueCode = generateRandomCode(5);
+function sendEmail(userEmail, uniqueCode) {
+   
 
     let transporter = nodemailer.createTransport({
         service: 'gmail',
