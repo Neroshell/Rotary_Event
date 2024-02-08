@@ -229,7 +229,7 @@ app.post('/admin-dashboard/register_meal', async function(req, res) {
             userId: user._id,
             firstname: userFirstName,
             lastname: userLastName,
-            eventCode,
+            eventCode: uniqueCode,
             ateAt: nowTime,
             ateOn: todaysDate
             
@@ -269,10 +269,10 @@ app.get('/admin-dashboard/meal_list', async function(req, res) {
 
 app.get('/admin-dashboard/search', async function(req, res) {
     try {
-        const uniqueCode = req.query.code;
+        const eventCode = req.query.code;
 
      // Query the database for meal records matching the unique code
-        const mealRecords = await mealTicket.find({ uniqueCode });
+        const mealRecords = await mealTicket.find({ eventCode });
       
 
         // Return the search results as JSON

@@ -9,7 +9,7 @@ const mealTicketSchema = mongoose.Schema({
     },
     firstname: String,
     lastname: String,
-    uniqueCode: String,
+    eventCode: String,
     mealCount: {
       type: Number,
       default: 0, 
