@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
         required: true // assuming you want emails to be required
         
     },
-    uniqueCode: String,
+    eventCode: String,
     count: {
         type: Number,
         default: 0, // Set the default value to 0

@@ -64,13 +64,13 @@ app.post('/', async function(req, res) {
         const { firstname, lastname, email } = req.body;
 
         // Generate a random alphanumeric code with exactly 5 characters
-        const uniqueCode = generateRandomCode(5);
+        const eventCode = generateRandomCode(5);
 
         const newUser = new User({
             firstname,
             lastname,
             email,
-            uniqueCode, // Save the code to the uniqueCode field
+            eventCode, // Save the code to the uniqueCode field
         });
 
         const savedUser = await newUser.save();
