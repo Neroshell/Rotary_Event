@@ -204,7 +204,7 @@ app.post('/admin-dashboard/register_meal', async function(req, res) {
         const code = req.body.code;
 
         // Find the user based on the provided code
-        const user = await User.findOne({ uniqueCode: code });
+        const user = await User.findOne({ eventCode: code });
       
         if (!user) {
             return res.status(404).json({ error: 'User not found' });
@@ -215,7 +215,7 @@ app.post('/admin-dashboard/register_meal', async function(req, res) {
         // Access the user's data
         const userFirstName = user.firstname;
         const userLastName = user.lastname;
-        const uniqueCode = user.uniqueCode;
+        const uniqueCode = user.eventCode;
 
         const currentDate = new Date();
         const hours = currentDate.getHours();
@@ -229,7 +229,7 @@ app.post('/admin-dashboard/register_meal', async function(req, res) {
             userId: user._id,
             firstname: userFirstName,
             lastname: userLastName,
-            uniqueCode,
+            eventCode,
             ateAt: nowTime,
             ateOn: todaysDate
             
