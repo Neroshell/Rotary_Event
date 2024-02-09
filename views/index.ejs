@@ -14,8 +14,10 @@
 </head>
 <body class="root-body">
     <nav>
-        <img src="/images/logo.png" alt="">
-        <img src="/images/district.png" alt="">
+        <div class="image-box">
+            <img src="/images/district.png" alt="">
+        </div>
+       
         <div class="dropdown dropdown_main">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Admin
@@ -28,6 +30,9 @@
     </nav>
 
     <main class="container index-main" >
+        <div class="image-box image-box-2">
+            <img src="/images/magic.png" alt="">
+        </div>
         <div style="line-height: 1.1;" class="hero">
         <h1><span style="color: #F7A81B;">District Team</span> <span style="color: #1C1C1C;">Training Seminar 2024</span></h1>
         <p><span style="color: #17478F; font-weight: bolder;">Orchid Hotel</span>, Lekki express way, Ikota, Lagos </p>
@@ -62,21 +67,45 @@
                     </div>
                     <div class="modal-body">
                         <form action="/" method="post">
-                            <div class="form-floating mb-3" >
-                                <input type="text" class="form-control" id="floatingInput" name="firstname" placeholder="Email" required>
-                                <label for="floatingInput">First name</label>
+                            <div class="form-floating mb-3">
+                                <select class="form-select" id="floatingTitle" name="title" required>
+                                    <option value="" disabled selected>Select Title</option>
+                                    <option value="Mr">Mr</option>
+                                    <option value="Mrs">Mrs</option>
+                                    <option value="Ms">Ms</option>
+                                    <option value="Ms">Miss</option>
+                                    <!-- Add more options here as needed -->
+                                </select>
+                                <label for="floatingTitle">Title</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingPassword" name="lastname" placeholder="Password" required>
-                                <label for="floatingPassword">Last name</label>
+                                <input type="text" class="form-control" id="floatingFirstName" name="firstname" placeholder="First name" required>
+                                <label for="floatingFirstName">First name</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput" name="email" placeholder="Email" required>
-                                <label for="floatingInput">Email</label>
+                                <input type="text" class="form-control" id="floatingLastName" name="lastname" placeholder="Last name" required>
+                                <label for="floatingLastName">Last name</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingEmail" name="email" placeholder="Email" required>
+                                <label for="floatingEmail">Email</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingCalName" name="calname" placeholder="Cal name" required>
+                                <label for="floatingCalName">Cal name</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingClubName" name="clubname" placeholder="Club name" required>
+                                <label for="floatingClubName">Club name</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="tel" class="form-control" id="floatingPhoneNumber" name="phonenumber" placeholder="Phone number" required>
+                                <label for="floatingPhoneNumber">Phone number</label>
                             </div>
                             <button type="submit" class="btn btn-primary submit" style="background-color: #17478F;">Submit</button>
                         </form>
                     </div>
+                    
                 </div>
             </div>
         </div>
