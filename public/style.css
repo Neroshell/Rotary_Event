@@ -236,7 +236,9 @@ overflow-x: scroll;
   .image-box-2{
     margin: 0 auto;
   }
-
+.admin-form{
+  width: 80%;
+}
     .dropdown {
       display: none;
     }

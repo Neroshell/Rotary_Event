@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
     title: {
         type: String,
-        enum: ['Dr', 'HRM', 'Otunba', 'High Chief', 'Chief', 'Mr', 'Mrs', 'Miss']
+        enum: ['Dr', 'HRM', 'Otunba', 'High Chief', 'Chief', 'Mr', 'Mrs', 'Miss', 'Sir', 'Engr', 'Alhaji', 'Pastor', 'ARC']
     },
     firstname: String,
     lastname: String,

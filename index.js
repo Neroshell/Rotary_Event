@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 4000;
@@ -17,8 +18,8 @@ const flash = require('express-flash');
 const server = http.createServer(app);
 const io = socketIo(server);
 
-
-mongoose.connect('mongodb+srv://Nero:Nero2636@atlascluster.dn1h6uq.mongodb.net/rotary_event', { useNewUrlParser: true, useUnifiedTopology: true });
+const dbPass = process.env.DB_PASS;
+mongoose.connect(`mongodb+srv://Nero:${dbPass}@atlascluster.dn1h6uq.mongodb.net/rotary_event`, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
 mongoose.connection.on('connected', function () {
@@ -164,7 +165,7 @@ app.post('/admin_login', function(req, res, next) {
 
         if (!user) {
             // Authentication failed
-           
+            req.flash('error', 'Authentication failed, try again');
             return res.redirect('/admin_login');
         }
 
@@ -174,7 +175,7 @@ app.post('/admin_login', function(req, res, next) {
                 console.error(err);
                 return next(err);
             }
-
+            req.flash('success', 'Authentication sucessful');
             return res.redirect('/admin-dashboard');
         });
     })(req, res, next);
