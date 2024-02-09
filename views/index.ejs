@@ -17,7 +17,18 @@
         <div class="image-box">
             <img src="/images/district.png" alt="">
         </div>
-       
+        <div class="flash-messages" style="margin-top: 5px; ">
+            <% if (messages.error) { %>
+                <div class="alert alert-danger" role="alert" style="background-color: red;">
+                    <%= messages.error %>
+                </div>
+            <% } else if (messages.success) { %>
+                <div class="alert alert-success" role="alert">
+                    <%= messages.success %>
+                </div>
+            <% } %>
+            <!-- Add more conditions for other types of flash messages if needed -->
+        </div>
         <div class="dropdown dropdown_main">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Admin
@@ -28,10 +39,13 @@
             </ul>
           </div>
     </nav>
+    
 
     <main class="container index-main" >
+
         <div class="image-box image-box-2">
             <img src="/images/magic.png" alt="">
+           
         </div>
         <div style="line-height: 1.1;" class="hero">
         <h1><span style="color: #F7A81B;">District Team</span> <span style="color: #1C1C1C;">Training Seminar 2024</span></h1>
@@ -70,11 +84,15 @@
                             <div class="form-floating mb-3">
                                 <select class="form-select" id="floatingTitle" name="title" required>
                                     <option value="" disabled selected>Select Title</option>
+                                    <option value="Dr">Dr</option>
+                                    <option value="HRM">HRM</option>
+                                    <option value="Otunba">Otunba</option>
+                                    <option value="High Chief">High Chief</option>
+                                    <option value="Chief">Chief</option>
                                     <option value="Mr">Mr</option>
                                     <option value="Mrs">Mrs</option>
-                                    <option value="Ms">Ms</option>
-                                    <option value="Ms">Miss</option>
-                                    <!-- Add more options here as needed -->
+                                    <option value="Miss">Miss</option>
+                                    
                                 </select>
                                 <label for="floatingTitle">Title</label>
                             </div>

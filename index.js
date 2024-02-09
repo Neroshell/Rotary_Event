@@ -12,6 +12,7 @@ const http = require('http');
 const Admin = require('./adminModel');
 const crypto = require('crypto');
 const { sendEmail, generateRandomCode } = require('./emailService');
+const flash = require('express-flash');
 
 const server = http.createServer(app);
 const io = socketIo(server);
@@ -40,6 +41,8 @@ app.use(session({
     cookie: { secure: false }
   }));
 
+  app.use(flash());
+
 app.use(express.static("public"));
 app.use('/admin-dashboard', express.static(__dirname + '/public'));
 app.use(express.json());
@@ -61,27 +64,35 @@ app.get('/', function(req, res) {
 
 app.post('/', async function(req, res) {
     try {
-        const { firstname, lastname, email } = req.body;
+        const { title, firstname, lastname, email, calname, clubname, phonenumber } = req.body;
 
         // Generate a random alphanumeric code with exactly 5 characters
         const generatedCode = generateRandomCode(5);
 
         const newUser = new User({
+            title,
             firstname,
             lastname,
             email,
+            calname,
+            clubname,
+            phonenumber,
             eventCode: generatedCode // Save the code to the uniqueCode field
         });
+            const found = await User.findOne({ email: email});
 
+            if (found){
+
+                req.flash('error', 'User already exists, try a new email');
+                return res.redirect('/');
+            }
         const savedUser = await newUser.save();
         if (savedUser) {
             // Send the code to the user's email using the separate function
             sendEmail(email, generatedCode);
 
             await User.updateOne({}, { $inc: { count: 1 } });
-
-
-          res.render('registered');
+            res.render('registered');
            
         } else {
             res.status(500).send({ error: 'Internal Server Error' });

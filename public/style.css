@@ -19,6 +19,10 @@ nav{
     width: 90%;
     margin: 0 auto;
 }
+
+.flash-messages{
+  width: 20%;
+}
 .dropdown {
   margin-top: 20px;
 }
@@ -28,8 +32,8 @@ nav{
 
 .index-main{
   text-align: left;
-  padding-top: 10px ;
-  margin-top: 5px;
+  padding-top: 0px ;
+  margin-top: 0px;
 }
 .dropdown button{
   background-color: #17478F;
@@ -216,6 +220,12 @@ overflow-x: scroll;
       text-align: center;
      
     }
+
+    .flash-messages{
+      width: 40%;
+    }
+
+    
     .image-box{
       width: 25%;
       margin-left: 20px;
