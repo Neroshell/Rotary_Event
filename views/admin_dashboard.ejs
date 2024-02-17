@@ -102,6 +102,7 @@
 
 // Automatically close flash messages after 5 seconds
 setTimeout(function() {
+        document.querySelector('.flash-messages').style.opacity = '0';
         document.querySelector('.flash-messages').style.display = 'none';
         
         // Add more lines for other types of flash messages if needed

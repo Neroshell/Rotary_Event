@@ -18,10 +18,14 @@ nav{
     justify-content: space-around;
     width: 90%;
     margin: 0 auto;
+    position: relative;
 }
 
 .flash-messages{
   width: 20%;
+  opacity: 1;
+  z-index: 99;
+  position: absolute;
 }
 .dropdown {
   margin-top: 20px;

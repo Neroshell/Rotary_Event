@@ -19,7 +19,8 @@ const server = http.createServer(app);
 const io = socketIo(server);
 
 const dbPass = process.env.DB_PASS;
-mongoose.connect(`mongodb+srv://Nero:${dbPass}@atlascluster.dn1h6uq.mongodb.net/rotary_event`, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(`mongodb+srv://Nero:${dbPass}@atlascluster.dn1h6uq.mongodb.net/rotary_event`, { useUnifiedTopology: true });
+
 
 
 mongoose.connection.on('connected', function () {
@@ -165,7 +166,7 @@ app.post('/admin_login', function(req, res, next) {
 
         if (!user) {
             // Authentication failed
-            req.flash('error', 'Authentication failed, try again');
+            req.flash('error', 'Authentication failed, User does not exist in our database');
             return res.redirect('/admin_login');
         }
 
