@@ -16,7 +16,7 @@ const { sendEmail, generateRandomCode } = require('./emailService');
 const flash = require('express-flash');
 
 const server = http.createServer(app);
-const io = socketIo(server);
+
 
 const dbPass = process.env.DB_PASS;
 mongoose.connect(`mongodb+srv://Nero:${dbPass}@atlascluster.dn1h6uq.mongodb.net/rotary_event`, { useUnifiedTopology: true });
